@@ -1,0 +1,300 @@
+/*  start by applying grid to the the container div. that's the parent.
+if we set the parent as display: grid, then we can get this grid system
+in inspect mode, if you applied grid correctly, hover over the container tag
+if you did it right, you should see dotted lines */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+  /* display: inline-block; */
+  /* margin: 0;
+  padding: 0;
+  overflow: hidden; */
+}
+
+nav li{
+  display: inline-block;
+  /* float: left; */
+  padding-right: 20px;
+  /* margin: 0; */
+}
+
+nav a{
+  /* display: block; */
+  color: black;
+  font-weight: bold;
+  text-decoration: none; /*Your code here - remove the underline*/
+  /* height: 100%;
+  width: 100%; */
+}
+
+nav a:hover{
+  text-decoration: underline; /*Your code here - add the underline*/
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute; /*Your code here - position relative to the parent */
+  top: -40px; /*Your code here - place 40px higher */
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip a:focus {
+/*Add the selector and rule to move the skip link to the exact top.*/
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition: top .1s ease-in;
+}
+
+a:focus{
+/*Add the selector and code to put a 2px black border around all elements in focus.*/
+  border: 2px solid black;
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;  /*Can you explain what this does?*/
+  grid-row: 7 / auto;   /*Can you rewrite it?*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 100px 500px 100px;
+  grid-template-rows: 30px auto auto auto auto auto 100px;
+  grid-row-gap: 15px;
+  width: 100vw;
+}
+
+.nav{
+   /*Your code here */
+  vertical-align: center;
+  /* justify-content: center; */
+  /*Provided*/
+  background-color: #ddd;
+  padding: 20px 0;
+  text-align: left;
+
+
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url("../images/header.jpg");      /* Your code here - Link to header.jpg in the images folder */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  /*Your code here - cover the entire row*/
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.about-image{
+  /*Your code here */
+  background-image: url("../images/about.jpg");
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  max-height: 700px;
+  /* object-fit: contain; */
+  overflow: hidden;
+  /* display: block; */
+  /* height: 700px; */
+  /* image content must not go over the 700 limit */
+}
+
+.about{
+  grid-column: 2/3;
+  grid-row: 3/4;
+  /*Your code here */
+}
+
+.method-image{
+  background-image: url("../images/method.jpg");
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  max-height: 700px;
+  overflow: hidden;
+  /*Your code here */
+}
+
+.method{
+  grid-column: 2/3;
+  grid-row: 4/5;
+    /*Your code here - start in the 2nd column*/
+}
+
+.clients-image{
+  background-image: url("../images/clients.jpg");
+  grid-column: 1/-1;
+  grid-row: 5/6;
+  max-height: 700px;
+  overflow: hidden;
+ /*Your code here */
+}
+
+.clients{
+  grid-column: 2/3;
+  grid-row: 5/6;
+ /*Your code here */
+}
+
+.contact-image{
+  background-image: url("../images/contact.jpg");
+  grid-column: 1/-1;
+  grid-row: 6/7;
+  max-height: 700px;
+  overflow: hidden;
+   /*Your code here */
+}
+
+.contact{
+  grid-column: 2/3;
+  grid-row: 6/7;
+   /*Your code here */
+}
+
+.text-block{
+   /*The text-block class should be centered vertically and horizontally (think css grid) with 30px padding on all sides */
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+  /* max-height: 100%; */
+  /* the below two center the block vertically and horizontally inside the grid */
+  align-self: center;
+  justify-self: center;
+}
+
+@media screen and (min-width: 800px)/*Your code here - Add the first media query.*/{
+
+  .container{
+    /*Your code here */
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+  }
+
+  .nav{
+    background-color: #ddd;
+    grid-column: 1 / -1;
+    grid-row: 1/2;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    /* vertical-align: center; */
+    justify-content: center;
+    text-align: right;
+     /*Your code here */
+  }
+
+  .about-image{
+    grid-column: 2/4;
+    grid-row: 3/4;
+    max-width: 100%;
+    max-height: 100%;
+    /*Your code here */
+    }
+
+  .about{
+    /*Your code here */
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+
+  .method-image{
+    grid-column: 3/5;
+    grid-row: 4/5;
+    /*Your code here */
+  }
+
+  .method{
+    grid-column: 2/4;
+    grid-row: 4/5;
+    /*Your code here */
+  }
+
+  .clients-image{
+    grid-column: 2/4;
+    grid-row: 5/6;
+    overflow: hidden;
+    /*Your code here */
+  }
+
+  .clients{
+    grid-column: 3/5;
+    grid-row: 5/6;
+    /*Your code here */
+  }
+
+  .contact-image{
+    grid-column: 3/5;
+    grid-row: 6/7;
+    /*Your code here */
+  }
+
+  .contact{
+    grid-column: 2/4;
+    grid-row: 6/7;
+    /*Your code here */
+   }
+
+}  /*End the media query*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out; /* Your code here - set to default setting */
+    transition: top 1s ease-out;/* Your code here - set to default setting */
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0;
+  }
+}
